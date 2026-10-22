@@ -1,0 +1,17 @@
+appId: cl.emeve.mirror-photobooth
+productName: EMEVE Mirror Photobooth
+directories:
+  output: release
+files:
+  - dist/**
+  - package.json
+win:
+  target: nsis
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+mac:
+  target: dmg
+  category: public.app-category.photography
+  extendInfo:
+    NSCameraUsageDescription: EMEVE necesita la cámara para la vista previa y las fotografías.

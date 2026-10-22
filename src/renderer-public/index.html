@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' ws://localhost:5173" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMEVE Mirror Photobooth</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="stage">
+    <video id="preview" autoplay playsinline muted></video>
+    <div class="veil"></div>
+
+    <section id="home">
+      <header>
+        <p class="brand">EMEVE</p>
+        <h1 id="names"></h1>
+        <p id="event-name"></p>
+        <p id="event-date"></p>
+      </header>
+      <p id="start-message" class="start"></p>
+    </section>
+
+    <section id="welcome" hidden>
+      <h2 id="welcome-message"></h2>
+      <p class="dev-note">Versión de desarrollo: la toma de fotos llega en la siguiente etapa.</p>
+      <div class="timer"><span id="timer-bar"></span></div>
+    </section>
+
+    <div id="camera-status" role="alert" hidden>
+      <h3 id="status-title"></h3>
+      <p id="status-detail"></p>
+      <button id="status-retry" type="button">Reintentar ahora</button>
+    </div>
+
+    <div id="touch-ring" hidden></div>
+  </div>
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>
